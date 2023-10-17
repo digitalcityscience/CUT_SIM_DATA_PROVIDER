@@ -1,0 +1,2 @@
+https://geodienste.hamburg.de/download?url=https://geodienste.hamburg.de/HH_WFS_Verkehrsmengen&f=json
+use newest only (2019)

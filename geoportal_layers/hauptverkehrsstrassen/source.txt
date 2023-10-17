@@ -1,0 +1,1 @@
+https://geodienste.hamburg.de/download?url=https://geodienste.hamburg.de/HH_WFS_Hauptverkehrsstrassen&f=json

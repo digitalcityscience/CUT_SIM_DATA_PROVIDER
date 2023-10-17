@@ -1,0 +1,1 @@
+https://geodienste.hamburg.de/download?url=https://geodienste.hamburg.de/HH_WFS_Strategisches_Strassennetz&f=json
