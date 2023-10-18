@@ -5,10 +5,12 @@ import re
 from typing import Optional
 
 """
+This script is supposed to be run once in order to create the noise simulation input from the publicly available streets
+data on the geoportal. Can be re-run if street data is updated on portal (happens every few years :D ) 
+Download the data from the geoportal and put it into the folders in the "geoportal_layers" dir.
 Lots of duplications in the code. However the input data varies at different points slighty, that would make a 
-more streamlined code with central functions quite hard to keep concise.
-For now I'll leave it like this.
-This is only supposed to be run once anyway. In order to create the database inputs.
+more streamlined code with central functions quite hard to keep concise. 
+Script runs only once anyway. For now I'll leave it like this.
 """
 
 
