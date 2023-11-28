@@ -1,4 +1,4 @@
-example_roi_geojson = {
+{
   "type": "FeatureCollection",
   "features": [
     {
