@@ -1,12 +1,17 @@
 # SIM DATA PROVIDER - CUT API
 
 ## API
-Provides a simple http API with one endpoint [POST] /noise_sim_input
+Provides a simple http API with 2 endpoints [POST] /buildings and /streets
 that provides the noise simulation input for region of interest. 
 The region of interest is defined as geojson like dict.
 
+## Data
+### Buildings with heights
+All groundfloor geometries of Hamburg buildings (from the LOD2 CityGML) and the building_height for each building
+`"building_height": 50,
+`
 
-## Streets data for noise simulations
+### Streets data for noise simulations
 **Geometries of streets in EPSG:4326**
 **Traffic counts for cars and trucks plus further properties needed for noise sim**
 
@@ -18,7 +23,8 @@ The region of interest is defined as geojson like dict.
 `
 
 
-## make_noise_info_from_geoportal_data.py
+## Create the app_data from public data sources 
+use /create_app_data/make_noise_info_from_geoportal_data.py
 The simulation input data is derived from publicly availabe data on the Geoportal. 
 See source.txt files in ./geoportal_layers 
 
