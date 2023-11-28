@@ -36,14 +36,14 @@ def sample_buildings_output():
 
 
 def test_streets(sample_roi_input, sample_streets_output):
-    response = client.post("/streets_data/", json=sample_roi_input)
+    response = client.post("/streets/", json=sample_roi_input)
 
     assert response.status_code == 200
     assert response.json() == sample_streets_output
 
 
-def test_buildings():
-    response = client.post("/streets_data/", json=sample_roi_input)
+def test_buildings(sample_roi_input, sample_buildings_output):
+    response = client.post("/buildings/", json=sample_roi_input)
 
     assert response.status_code == 200
     assert response.json() == sample_buildings_output

@@ -30,6 +30,6 @@ def buildings_for_roi(region_of_interest: RegionOfInterest):
     return get_buildings_with_heights(jsonable_encoder(region_of_interest))
 
 
-@app.post("/streets_data/")
+@app.post("/streets/")
 def streets_for_roi(region_of_interest: RegionOfInterest):
     return get_streets_with_traffic(jsonable_encoder(region_of_interest))

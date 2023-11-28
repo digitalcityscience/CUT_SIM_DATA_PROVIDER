@@ -1,4 +1,4 @@
-# start with volume ./noise_input_data:/app/noise_input_data
+# start with volume ./app_data:/app/app_data
 # start with port mapping XXXX:5000
 
 FROM --platform=linux/x86_64 python:3.11
@@ -13,7 +13,6 @@ COPY ./requirements.txt ./requirements.txt
 RUN pip install --upgrade pip
 RUN pip install --upgrade wheel
 RUN pip install -r requirements.txt
-
 
 WORKDIR /app
 

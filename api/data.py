@@ -4,7 +4,7 @@ from pathlib import Path
 import geopandas as gpd
 
 buildings_geometries_file = (
-    Path(__file__).parent.parent / "app_data/buildings/buildings_with_heights.gpkg"
+    Path(__file__).parent.parent / "app_data/buildings_data/buildings_with_heights.gpkg"
 )
 streets_with_traffic_file = (
     Path(__file__).parent.parent / "app_data/streets_data/streets_with_traffic.gpkg"
