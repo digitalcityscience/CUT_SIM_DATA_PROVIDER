@@ -16,6 +16,8 @@ def get_buildings_with_heights(roi_geojson):
 
     buildings_gdf = gpd.read_file(buildings_geometries_file, mask=roi)
     buildings_gdf = buildings_gdf.explode()
+    buildings_gdf = buildings_gdf.reset_index()
+    buildings_gdf["id"] = buildings_gdf.index
 
     return json.loads(buildings_gdf.to_json())
 
@@ -25,5 +27,7 @@ def get_streets_with_traffic(roi_geojson):
 
     streets_gdf = gpd.read_file(streets_with_traffic_file, mask=roi)
     streets_gdf = streets_gdf.explode()
+    streets_gdf = streets_gdf.reset_index()
+    streets_gdf["id"] = streets_gdf.index
 
     return json.loads(streets_gdf.to_json())
