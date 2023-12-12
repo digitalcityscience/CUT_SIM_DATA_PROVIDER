@@ -14,14 +14,16 @@ streets_with_traffic_file = (
 def get_buildings_with_heights(roi_geojson):
     roi = gpd.GeoDataFrame.from_features(roi_geojson["features"], crs="EPSG:4326")
 
-    noise_input_gdf = gpd.read_file(buildings_geometries_file, mask=roi)
+    buildings_gdf = gpd.read_file(buildings_geometries_file, mask=roi)
+    buildings_gdf = buildings_gdf.explode()
 
-    return json.loads(noise_input_gdf.to_json())
+    return json.loads(buildings_gdf.to_json())
 
 
 def get_streets_with_traffic(roi_geojson):
     roi = gpd.GeoDataFrame.from_features(roi_geojson["features"], crs="EPSG:4326")
 
-    noise_input_gdf = gpd.read_file(streets_with_traffic_file, mask=roi)
+    streets_gdf = gpd.read_file(streets_with_traffic_file, mask=roi)
+    streets_gdf = streets_gdf.explode()
 
-    return json.loads(noise_input_gdf.to_json())
+    return json.loads(streets_gdf.to_json())
