@@ -15,6 +15,7 @@ def get_buildings_with_heights(roi_geojson):
     roi = gpd.GeoDataFrame.from_features(roi_geojson["features"], crs="EPSG:4326")
 
     buildings_gdf = gpd.read_file(buildings_geometries_file, mask=roi)
+    buildings_gdf = gpd.clip(buildings_gdf, roi)
     buildings_gdf = buildings_gdf.explode()
     buildings_gdf = buildings_gdf.reset_index()
     buildings_gdf["id"] = buildings_gdf.index
@@ -26,6 +27,7 @@ def get_streets_with_traffic(roi_geojson):
     roi = gpd.GeoDataFrame.from_features(roi_geojson["features"], crs="EPSG:4326")
 
     streets_gdf = gpd.read_file(streets_with_traffic_file, mask=roi)
+    streets_gdf = gpd.clip(streets_gdf, roi)
     streets_gdf = streets_gdf.explode()
     streets_gdf = streets_gdf.reset_index()
     streets_gdf["id"] = streets_gdf.index
